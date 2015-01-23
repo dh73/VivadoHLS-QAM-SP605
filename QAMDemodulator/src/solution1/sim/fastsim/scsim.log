@@ -1,0 +1,7 @@
+   Compiling hls_design_dut.cpp
+   Compiling hls_design.cpp
+   Compiling tb_qam_dem.cpp_pre.cpp.tb.cpp
+   Compiling qam_dem.cpp_pre.cpp.tb.cpp
+   Compiling vhls_sim.cpp
+   Compiling hls_design_meta.cpp
+cosim.tv.mk:71: recipe for target 'lib' failed

@@ -1,0 +1,9 @@
+NET "ap_clk" TNM_NET = "ap_clk";
+TIMESPEC "TS_clk" = PERIOD "ap_clk" 10.000000 ns HIGH 50 %;
+
+#Uncomment the following to set Tco
+#OFFSET = IN 10.000000 ns VALID 10.000000 ns BEFORE "ap_clk";
+
+#Uncomment the following to set Tsu
+#OFFSET = OUT 10.000000 ns AFTER "ap_clk";
+

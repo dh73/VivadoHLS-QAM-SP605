@@ -1,0 +1,396 @@
+
+{
+  'fileSets' => [
+    {
+      'files' => [
+        {
+          'fileType' => 'datSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_sim/qam_dem_top_mounstrito_cos_lut_rom.dat'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_sim/qam_dem_top_mul_16s_12s_27_2.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_sim/qam_dem_top_mounstrito_cos_lut.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_sim/qam_dem_top_mounstrito.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_sim/qam_dem_top.v'
+        }
+      ],
+      'name' => 'vivado_hls_sim_verilog_fileset'
+    },
+    {
+      'files' => [
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_sim/qam_dem_top_mul_16s_12s_27_2.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_sim/qam_dem_top_mounstrito_cos_lut.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_sim/qam_dem_top_mounstrito.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_sim/qam_dem_top.vhd'
+        }
+      ],
+      'name' => 'vivado_hls_sim_vhdl_fileset'
+    },
+    {
+      'files' => [
+        {
+          'fileType' => 'datSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_impl/qam_dem_top_mounstrito_cos_lut_rom.dat'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'qam_dem_top_mul_16s_12s_27_2',
+          'name' => 'verilog_impl/qam_dem_top_mul_16s_12s_27_2.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'qam_dem_top_mounstrito_cos_lut',
+          'name' => 'verilog_impl/qam_dem_top_mounstrito_cos_lut.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'qam_dem_top_mounstrito',
+          'name' => 'verilog_impl/qam_dem_top_mounstrito.v'
+        },
+        {
+          'fileType' => 'verilogSource',
+          'logicalName' => 'work',
+          'name' => 'verilog_impl/qam_dem_top.v'
+        }
+      ],
+      'name' => 'vivado_hls_impl_verilog_fileset'
+    },
+    {
+      'files' => [
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_impl/qam_dem_top_mul_16s_12s_27_2.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_impl/qam_dem_top_mounstrito_cos_lut.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_impl/qam_dem_top_mounstrito.vhd'
+        },
+        {
+          'fileType' => 'vhdlSource',
+          'logicalName' => 'work',
+          'name' => 'vhdl_impl/qam_dem_top.vhd'
+        }
+      ],
+      'name' => 'vivado_hls_impl_vhdl_fileset'
+    }
+  ],
+  'DesignConstraint' => {
+      'clk_period' => '10.000000'
+  },
+  'library' => 'VIVADO_HLS',
+  'model' => {
+    'modelParameters'=>{
+        'combinational' => '0',
+        'latency' => '14',
+        'II' => 'x'
+    },
+    'ports' => [
+      {
+        'dataType' => {
+          'fractionWidth' => '13',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '15',
+        'name' => 'din_i_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '13',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '15',
+        'name' => 'din_q_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '13',
+          'type' => 'Signed'
+        },
+        'direction' => 'out',
+        'left' => '15',
+        'name' => 'dout_mix_i_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '13',
+          'type' => 'Signed'
+        },
+        'direction' => 'out',
+        'left' => '15',
+        'name' => 'dout_mix_q_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '11',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '11',
+        'name' => 'ph_in_i_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '11',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '11',
+        'name' => 'ph_in_q_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '11',
+          'type' => 'Signed'
+        },
+        'direction' => 'out',
+        'left' => '11',
+        'name' => 'ph_out_i_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '11',
+          'type' => 'Signed'
+        },
+        'direction' => 'out',
+        'left' => '11',
+        'name' => 'ph_out_q_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '26',
+          'type' => 'Signed'
+        },
+        'direction' => 'out',
+        'left' => '27',
+        'name' => 'loop_integ_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'Unsigned'
+        },
+        'direction' => 'in',
+        'left' => '1',
+        'name' => 'control_qam_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '7',
+        'name' => 'control_lf_p',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '7',
+        'name' => 'control_lf_i',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '7',
+        'name' => 'control_lf_out_gain',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'Unsigned'
+        },
+        'direction' => 'in',
+        'left' => '0',
+        'name' => 'control_reg_clr',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '26',
+          'type' => 'Signed'
+        },
+        'direction' => 'in',
+        'left' => '27',
+        'name' => 'control_reg_init_V',
+        'right' => '0',
+        'type' => 'std_logic_vector'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'in',
+        'left' => '0',
+        'name' => 'ap_clk',
+        'right' => '0',
+        'type' => 'std_logic'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'in',
+        'left' => '0',
+        'name' => 'ap_rst',
+        'right' => '0',
+        'type' => 'std_logic'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'out',
+        'left' => '0',
+        'name' => 'ap_done',
+        'right' => '0',
+        'type' => 'std_logic'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'in',
+        'left' => '0',
+        'name' => 'ap_start',
+        'right' => '0',
+        'type' => 'std_logic'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'out',
+        'left' => '0',
+        'name' => 'ap_idle',
+        'right' => '0',
+        'type' => 'std_logic'
+      },
+      {
+        'dataType' => {
+          'fractionWidth' => '0',
+          'type' => 'bool'
+        },
+        'direction' => 'out',
+        'left' => '0',
+        'name' => 'ap_ready',
+        'right' => '0',
+        'type' => 'std_logic'
+      }
+    ],
+    'views' => [
+      {
+        'envIdentifier' => 'verilogSource:sysgen.xilinx.com:synthesis',
+        'fileSetRef' => {
+          'localName' => 'vivado_hls_impl_verilog_fileset'
+        },
+        'language' => 'VERILOG',
+        'name' => 'xilinx_verilogsynthesis'
+      },
+      {
+        'envIdentifier' => 'vhdlSource:sysgen.xilinx.com:synthesis',
+        'fileSetRef' => {
+          'localName' => 'vivado_hls_impl_vhdl_fileset'
+        },
+        'language' => 'VHDL',
+        'name' => 'xilinx_vhdlsynthesis'
+      },
+      {
+        'envIdentifier' => 'verilogSource:sysgen.xilinx.com:synthesis',
+        'fileSetRef' => {
+          'localName' => 'vivado_hls_sim_verilog_fileset'
+        },
+        'language' => 'VERILOG',
+        'name' => 'xilinx_verilogsimulation'
+      },
+      {
+        'envIdentifier' => 'vhdlSource:sysgen.xilinx.com:synthesis',
+        'fileSetRef' => {
+          'localName' => 'vivado_hls_sim_vhdl_fileset'
+        },
+        'language' => 'VHDL',
+        'name' => 'xilinx_vhdlsimulation'
+      }
+    ]
+  },
+  'name' => 'qam_dem_top',
+  'vendor' => 'xilinx.com',
+  'version' => '1.0'
+}

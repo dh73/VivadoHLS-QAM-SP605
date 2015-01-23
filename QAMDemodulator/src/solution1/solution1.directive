@@ -1,0 +1,46 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="mix" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="mul" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="operation" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+        <directive functionName="qam_dem_top" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_none" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="port" value="ph_out" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="qam_dem_top" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_none" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="port" value="loop_integ" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="qam_dem_top" label="" functionLabel="">
+            <pragma name="DATAFLOW"/>
+        </directive>
+        <directive functionName="qam_dem_top" label="" functionLabel="">
+            <pragma name="DATAFLOW"/>
+        </directive>
+        <directive functionName="qam_dem_top" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_none" value="" positionalBoolean="mode"/>
+                <option name="register" value="" positionalBoolean="1"/>
+                <option name="port" value="dout_mix" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="QAMDEM::mix" label="" functionLabel="">
+            <pragma name="ALLOCATION">
+                <option name="instances" value="mul" positionalBoolean="4"/>
+                <option name="limit" value="1"/>
+                <option name="operation" value="" positionalBoolean="type"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

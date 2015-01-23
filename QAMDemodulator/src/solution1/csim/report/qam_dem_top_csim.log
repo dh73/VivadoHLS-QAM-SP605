@@ -1,0 +1,27 @@
+   Compiling ../../../../tb_qam_dem.cpp in debug mode
+   Generating csim.exe
+Makefile.rules:339: recipe for target 'csim.exe' failed
+obj/qam_dem.o: In function `QAMDEM::mix(cdata_t, cdata_t*, cphase_t)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:35: multiple definition of `QAMDEM::mix(cdata_t, cdata_t*, cphase_t)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:35: first defined here
+obj/qam_dem.o: In function `QAMDEM::slicer(ap_ufixed<2, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, cdata_t, hd_t*, cdata_t*, error_t*)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:47: multiple definition of `QAMDEM::slicer(ap_ufixed<2, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, cdata_t, hd_t*, cdata_t*, error_t*)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:47: first defined here
+obj/qam_dem.o: In function `QAMDEM::phase_recovery(hd_t, cdata_t, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*, ctl_crec_t)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:78: multiple definition of `QAMDEM::phase_recovery(hd_t, cdata_t, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*, ctl_crec_t)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:78: first defined here
+obj/qam_dem.o: In function `QAMDEM::compute_phase(hd_t, cdata_t, ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>*)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:111: multiple definition of `QAMDEM::compute_phase(hd_t, cdata_t, ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>*)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:111: first defined here
+obj/qam_dem.o: In function `QAMDEM::loop_filter(ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:128: multiple definition of `QAMDEM::loop_filter(ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:128: first defined here
+obj/qam_dem.o: In function `QAMDEM::vco(ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 1, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:164: multiple definition of `QAMDEM::vco(ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 1, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:164: first defined here
+obj/qam_dem.o: In function `QAMDEM::mounstrito(cdata_t, cdata_t*, cphase_t, cphase_t*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)':
+/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:256: multiple definition of `QAMDEM::mounstrito(cdata_t, cdata_t*, cphase_t, cphase_t*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)'
+obj/tb_qam_dem.o:/home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/csim/build/../../../../qam_dem.h:256: first defined here
+collect2: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+@E [SIM-1] 'csim_design' failed: compilation error(s).

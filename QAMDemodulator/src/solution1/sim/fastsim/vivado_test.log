@@ -1,0 +1,8 @@
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source test_platform.tcl -notrace
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 21 09:41:03 2015...

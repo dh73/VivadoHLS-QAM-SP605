@@ -1,0 +1,866 @@
+
+
+================================================================
+== Vivado HLS Report for 'qam_dem_top_mounstrito'
+================================================================
+* Date:           Wed Jan 21 09:35:29 2015
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        qam_dem
+* Solution:       solution1
+* Product family: spartan6
+* Target device:  xc6slx45tfgg484-3
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.65|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   14|   14|   14|   14|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+-------+
+|       Name      | BRAM_18K| DSP48A|   FF  |  LUT  |
++-----------------+---------+-------+-------+-------+
+|Expression       |        -|      -|      -|      -|
+|FIFO             |        -|      -|      -|      -|
+|Instance         |        -|      -|      -|      -|
+|Memory           |        -|      -|      -|      -|
+|Multiplexer      |        -|      -|      -|      -|
+|Register         |        -|      -|      -|      -|
++-----------------+---------+-------+-------+-------+
+|Total            |        0|      0|      0|      0|
++-----------------+---------+-------+-------+-------+
+|Available        |      116|     58|  54576|  27288|
++-----------------+---------+-------+-------+-------+
+|Utilization (%)  |        0|      0|      0|      0|
++-----------------+---------+-------+-------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 15
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+* FSM state operations: 
+
+ <State 1>: 8.11ns
+ST_1: ph_in_i_V_read [1/1] 0.00ns
+:6  %ph_in_i_V_read = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %ph_in_i_V)
+
+ST_1: din_i_V_read [1/1] 0.00ns
+:8  %din_i_V_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %din_i_V)
+
+ST_1: OP1_V_i_cast [1/1] 0.00ns
+:10  %OP1_V_i_cast = sext i16 %din_i_V_read to i27
+
+ST_1: OP2_V_i_cast [1/1] 0.00ns
+:11  %OP2_V_i_cast = sext i12 %ph_in_i_V_read to i27
+
+ST_1: p_Val2_s [2/2] 8.11ns
+:12  %p_Val2_s = mul i27 %OP1_V_i_cast, %OP2_V_i_cast
+
+
+ <State 2>: 8.11ns
+ST_2: ph_in_q_V_read [1/1] 0.00ns
+:5  %ph_in_q_V_read = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %ph_in_q_V)
+
+ST_2: din_q_V_read [1/1] 0.00ns
+:7  %din_q_V_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %din_q_V)
+
+ST_2: p_Val2_s [1/2] 8.11ns
+:12  %p_Val2_s = mul i27 %OP1_V_i_cast, %OP2_V_i_cast
+
+ST_2: OP2_V_1_i_cast [1/1] 0.00ns
+:13  %OP2_V_1_i_cast = sext i12 %ph_in_q_V_read to i27
+
+ST_2: tmp_1 [1/1] 0.00ns
+:14  %tmp_1 = sext i16 %din_q_V_read to i27
+
+ST_2: tmp [1/1] 0.00ns
+:15  %tmp = call i16 @_ssdm_op_PartSelect.i16.i27.i32.i32(i27 %p_Val2_s, i32 11, i32 26)
+
+ST_2: tmp_i_cast [2/2] 8.11ns
+:17  %tmp_i_cast = mul i27 %tmp_1, %OP2_V_1_i_cast
+
+
+ <State 3>: 8.11ns
+ST_3: tmp_i_cast [1/2] 8.11ns
+:17  %tmp_i_cast = mul i27 %tmp_1, %OP2_V_1_i_cast
+
+ST_3: p_Val2_2 [2/2] 8.11ns
+:20  %p_Val2_2 = mul i27 %OP1_V_i_cast, %OP2_V_1_i_cast
+
+
+ <State 4>: 8.65ns
+ST_4: tmp_6_i [1/1] 0.00ns
+:16  %tmp_6_i = call i27 @_ssdm_op_BitConcatenate.i27.i16.i11(i16 %tmp, i11 0)
+
+ST_4: p_Val2_1 [1/1] 5.55ns
+:18  %p_Val2_1 = sub i27 %tmp_6_i, %tmp_i_cast
+
+ST_4: sd_out_i_V [1/1] 0.00ns
+:19  %sd_out_i_V = call i16 @_ssdm_op_PartSelect.i16.i27.i32.i32(i27 %p_Val2_1, i32 11, i32 26)
+
+ST_4: p_Val2_2 [1/2] 8.11ns
+:20  %p_Val2_2 = mul i27 %OP1_V_i_cast, %OP2_V_1_i_cast
+
+ST_4: tmp_2 [1/1] 0.00ns
+:21  %tmp_2 = call i16 @_ssdm_op_PartSelect.i16.i27.i32.i32(i27 %p_Val2_2, i32 11, i32 26)
+
+ST_4: tmp_4_i_cast [2/2] 8.11ns
+:23  %tmp_4_i_cast = mul i27 %tmp_1, %OP2_V_i_cast
+
+ST_4: isneg [1/1] 0.00ns
+:26  %isneg = call i1 @_ssdm_op_BitSelect.i1.i27.i32(i27 %p_Val2_1, i32 26)
+
+ST_4: newsignbit [1/1] 0.00ns
+:27  %newsignbit = call i1 @_ssdm_op_BitSelect.i1.i27.i32(i27 %p_Val2_1, i32 24)
+
+ST_4: p_Result_i [1/1] 0.00ns
+:28  %p_Result_i = call i2 @_ssdm_op_PartSelect.i2.i27.i32.i32(i27 %p_Val2_1, i32 25, i32 26)
+
+ST_4: p_not_i1_i [1/1] 1.26ns
+:29  %p_not_i1_i = icmp ne i2 %p_Result_i, 0
+
+ST_4: brmerge_i1_i [1/1] 0.92ns
+:30  %brmerge_i1_i = or i1 %newsignbit, %p_not_i1_i
+
+ST_4: tmp_5_i [1/1] 0.92ns
+:31  %tmp_5_i = xor i1 %isneg, true
+
+ST_4: overflow [1/1] 0.92ns
+:32  %overflow = and i1 %brmerge_i1_i, %tmp_5_i
+
+ST_4: newsignbit_0_not_i1_i [1/1] 0.92ns
+:33  %newsignbit_0_not_i1_i = xor i1 %newsignbit, true
+
+ST_4: p_not38_i1_i [1/1] 1.26ns
+:34  %p_not38_i1_i = icmp ne i2 %p_Result_i, -1
+
+ST_4: brmerge39_i1_i [1/1] 0.92ns
+:35  %brmerge39_i1_i = or i1 %p_not38_i1_i, %newsignbit_0_not_i1_i
+
+ST_4: underflow [1/1] 0.92ns
+:36  %underflow = and i1 %brmerge39_i1_i, %isneg
+
+
+ <State 5>: 8.11ns
+ST_5: tmp_4_i_cast [1/2] 8.11ns
+:23  %tmp_4_i_cast = mul i27 %tmp_1, %OP2_V_i_cast
+
+ST_5: brmerge_i_i1_i [1/1] 0.92ns
+:37  %brmerge_i_i1_i = or i1 %underflow, %overflow
+
+ST_5: underflow_not_i [1/1] 0.92ns
+:38  %underflow_not_i = xor i1 %underflow, true
+
+ST_5: brmerge8_i [1/1] 0.92ns
+:39  %brmerge8_i = or i1 %overflow, %underflow_not_i
+
+ST_5: not_brmerge_i_i1_i [1/1] 0.92ns
+:54  %not_brmerge_i_i1_i = xor i1 %brmerge_i_i1_i, true
+
+ST_5: tmp_5 [1/1] 0.92ns
+:55  %tmp_5 = and i1 %newsignbit, %not_brmerge_i_i1_i
+
+ST_5: tmp_s [1/1] 0.92ns
+:56  %tmp_s = or i1 %underflow, %newsignbit
+
+ST_5: tmp_3 [1/1] 0.92ns
+:57  %tmp_3 = select i1 %brmerge8_i, i1 %tmp_5, i1 %tmp_s
+
+
+ <State 6>: 5.55ns
+ST_6: tmp_3_i [1/1] 0.00ns
+:22  %tmp_3_i = call i27 @_ssdm_op_BitConcatenate.i27.i16.i11(i16 %tmp_2, i11 0)
+
+ST_6: p_Val2_3 [1/1] 5.55ns
+:24  %p_Val2_3 = add i27 %tmp_3_i, %tmp_4_i_cast
+
+ST_6: sd_out_q_V [1/1] 0.00ns
+:25  %sd_out_q_V = call i16 @_ssdm_op_PartSelect.i16.i27.i32.i32(i27 %p_Val2_3, i32 11, i32 26)
+
+ST_6: isneg_1 [1/1] 0.00ns
+:40  %isneg_1 = call i1 @_ssdm_op_BitSelect.i1.i27.i32(i27 %p_Val2_3, i32 26)
+
+ST_6: newsignbit_1 [1/1] 0.00ns
+:41  %newsignbit_1 = call i1 @_ssdm_op_BitSelect.i1.i27.i32(i27 %p_Val2_3, i32 24)
+
+ST_6: p_Result_1_i [1/1] 0.00ns
+:42  %p_Result_1_i = call i2 @_ssdm_op_PartSelect.i2.i27.i32.i32(i27 %p_Val2_3, i32 25, i32 26)
+
+
+ <State 7>: 8.11ns
+ST_7: p_not_i_i [1/1] 1.26ns
+:43  %p_not_i_i = icmp ne i2 %p_Result_1_i, 0
+
+ST_7: brmerge_i_i [1/1] 0.92ns
+:44  %brmerge_i_i = or i1 %newsignbit_1, %p_not_i_i
+
+ST_7: tmp_7_i [1/1] 0.92ns
+:45  %tmp_7_i = xor i1 %isneg_1, true
+
+ST_7: overflow_1 [1/1] 0.92ns
+:46  %overflow_1 = and i1 %brmerge_i_i, %tmp_7_i
+
+ST_7: newsignbit_0_not_i_i [1/1] 0.92ns
+:47  %newsignbit_0_not_i_i = xor i1 %newsignbit_1, true
+
+ST_7: p_not38_i_i [1/1] 1.26ns
+:48  %p_not38_i_i = icmp ne i2 %p_Result_1_i, -1
+
+ST_7: brmerge39_i_i [1/1] 0.92ns
+:49  %brmerge39_i_i = or i1 %p_not38_i_i, %newsignbit_0_not_i_i
+
+ST_7: underflow_1 [1/1] 0.92ns
+:50  %underflow_1 = and i1 %brmerge39_i_i, %isneg_1
+
+ST_7: brmerge_i_i_i [1/1] 0.92ns
+:51  %brmerge_i_i_i = or i1 %underflow_1, %overflow_1
+
+ST_7: underflow_1_not_i [1/1] 0.92ns
+:52  %underflow_1_not_i = xor i1 %underflow_1, true
+
+ST_7: brmerge9_i [1/1] 0.92ns
+:53  %brmerge9_i = or i1 %overflow_1, %underflow_1_not_i
+
+ST_7: tmp_i2 [1/1] 0.00ns
+:58  %tmp_i2 = call i2 @_ssdm_op_BitConcatenate.i2.i1.i1(i1 %tmp_3, i1 true)
+
+ST_7: p_Result_s [1/1] 0.00ns
+:59  %p_Result_s = call i5 @_ssdm_op_PartSet.i5.i5.i2.i32.i32(i5 undef, i2 %tmp_i2, i32 3, i32 4)
+
+ST_7: not_brmerge_i_i_i [1/1] 0.92ns
+:60  %not_brmerge_i_i_i = xor i1 %brmerge_i_i_i, true
+
+ST_7: tmp_4 [1/1] 0.92ns
+:61  %tmp_4 = and i1 %newsignbit_1, %not_brmerge_i_i_i
+
+ST_7: tmp_8 [1/1] 0.92ns
+:62  %tmp_8 = or i1 %underflow_1, %newsignbit_1
+
+ST_7: tmp_6 [1/1] 0.92ns
+:63  %tmp_6 = select i1 %brmerge9_i, i1 %tmp_4, i1 %tmp_8
+
+ST_7: OP1_V [1/1] 0.00ns
+:66  %OP1_V = sext i5 %p_Result_s to i21
+
+ST_7: OP2_V [1/1] 0.00ns
+:67  %OP2_V = sext i16 %sd_out_q_V to i21
+
+ST_7: p_Val2_8 [2/2] 8.11ns
+:68  %p_Val2_8 = mul i21 %OP2_V, %OP1_V
+
+ST_7: stg_81 [1/1] 0.00ns
+:207  call void @_ssdm_op_Write.ap_auto.i16P(i16* %dout_mix_q_V, i16 %sd_out_q_V)
+
+
+ <State 8>: 8.11ns
+ST_8: tmp_1_i3 [1/1] 0.00ns
+:64  %tmp_1_i3 = call i2 @_ssdm_op_BitConcatenate.i2.i1.i1(i1 %tmp_6, i1 true)
+
+ST_8: p_Result_2 [1/1] 0.00ns
+:65  %p_Result_2 = call i5 @_ssdm_op_PartSet.i5.i5.i2.i32.i32(i5 undef, i2 %tmp_1_i3, i32 3, i32 4)
+
+ST_8: p_Val2_8 [1/2] 8.11ns
+:68  %p_Val2_8 = mul i21 %OP2_V, %OP1_V
+
+ST_8: isneg_2 [1/1] 0.00ns
+:69  %isneg_2 = call i1 @_ssdm_op_BitSelect.i1.i21.i32(i21 %p_Val2_8, i32 20)
+
+ST_8: p_Val2_9 [1/1] 0.00ns
+:70  %p_Val2_9 = call i14 @_ssdm_op_PartSelect.i14.i21.i32.i32(i21 %p_Val2_8, i32 5, i32 18)
+
+ST_8: newsignbit_2 [1/1] 0.00ns
+:71  %newsignbit_2 = call i1 @_ssdm_op_BitSelect.i1.i21.i32(i21 %p_Val2_8, i32 18)
+
+ST_8: p_Result_i8 [1/1] 0.00ns
+:72  %p_Result_i8 = call i2 @_ssdm_op_PartSelect.i2.i21.i32.i32(i21 %p_Val2_8, i32 19, i32 20)
+
+ST_8: OP1_V_1 [1/1] 0.00ns
+:86  %OP1_V_1 = sext i5 %p_Result_2 to i21
+
+ST_8: OP2_V_1 [1/1] 0.00ns
+:87  %OP2_V_1 = sext i16 %sd_out_i_V to i21
+
+ST_8: p_Val2_18 [2/2] 8.11ns
+:88  %p_Val2_18 = mul i21 %OP2_V_1, %OP1_V_1
+
+ST_8: stg_92 [1/1] 0.00ns
+:206  call void @_ssdm_op_Write.ap_auto.i16P(i16* %dout_mix_i_V, i16 %sd_out_i_V)
+
+
+ <State 9>: 8.11ns
+ST_9: p_not_i_i9 [1/1] 1.26ns
+:73  %p_not_i_i9 = icmp ne i2 %p_Result_i8, 0
+
+ST_9: brmerge_i_i1 [1/1] 0.92ns
+:74  %brmerge_i_i1 = or i1 %newsignbit_2, %p_not_i_i9
+
+ST_9: tmp_8_i [1/1] 0.92ns
+:75  %tmp_8_i = xor i1 %isneg_2, true
+
+ST_9: overflow_2 [1/1] 0.92ns
+:76  %overflow_2 = and i1 %brmerge_i_i1, %tmp_8_i
+
+ST_9: newsignbit_0_not_i_i1 [1/1] 0.92ns
+:77  %newsignbit_0_not_i_i1 = xor i1 %newsignbit_2, true
+
+ST_9: p_not38_i_i1 [1/1] 1.26ns
+:78  %p_not38_i_i1 = icmp ne i2 %p_Result_i8, -1
+
+ST_9: brmerge39_i_i1 [1/1] 0.92ns
+:79  %brmerge39_i_i1 = or i1 %p_not38_i_i1, %newsignbit_0_not_i_i1
+
+ST_9: underflow_2 [1/1] 0.92ns
+:80  %underflow_2 = and i1 %brmerge39_i_i1, %isneg_2
+
+ST_9: brmerge_i_i_i1 [1/1] 0.92ns
+:81  %brmerge_i_i_i1 = or i1 %underflow_2, %overflow_2
+
+ST_9: underflow_not_i1 [1/1] 0.92ns
+:82  %underflow_not_i1 = xor i1 %underflow_2, true
+
+ST_9: brmerge_i [1/1] 0.92ns
+:83  %brmerge_i = or i1 %overflow_2, %underflow_not_i1
+
+ST_9: p_Val2_21_mux_i [1/1] 0.92ns
+:84  %p_Val2_21_mux_i = select i1 %brmerge_i_i_i1, i14 8191, i14 %p_Val2_9
+
+ST_9: p_Val2_i1 [1/1] 0.92ns
+:85  %p_Val2_i1 = select i1 %underflow_2, i14 -8192, i14 %p_Val2_9
+
+ST_9: p_Val2_18 [1/2] 8.11ns
+:88  %p_Val2_18 = mul i21 %OP2_V_1, %OP1_V_1
+
+ST_9: tmp_9 [1/1] 0.92ns
+:89  %tmp_9 = select i1 %brmerge_i, i14 %p_Val2_21_mux_i, i14 %p_Val2_i1
+
+
+ <State 10>: 8.65ns
+ST_10: tmp_1_i1 [1/1] 0.00ns
+:90  %tmp_1_i1 = call i19 @_ssdm_op_BitConcatenate.i19.i14.i5(i14 %tmp_9, i5 0)
+
+ST_10: tmp_10_cast_i [1/1] 0.00ns
+:91  %tmp_10_cast_i = sext i19 %tmp_1_i1 to i21
+
+ST_10: p_Val2_23 [1/1] 5.55ns
+:92  %p_Val2_23 = sub i21 %tmp_10_cast_i, %p_Val2_18
+
+ST_10: isneg_3 [1/1] 0.00ns
+:93  %isneg_3 = call i1 @_ssdm_op_BitSelect.i1.i21.i32(i21 %p_Val2_23, i32 20)
+
+ST_10: p_Val2_24 [1/1] 0.00ns
+:94  %p_Val2_24 = call i14 @_ssdm_op_PartSelect.i14.i21.i32.i32(i21 %p_Val2_23, i32 5, i32 18)
+
+ST_10: newsignbit_3 [1/1] 0.00ns
+:95  %newsignbit_3 = call i1 @_ssdm_op_BitSelect.i1.i21.i32(i21 %p_Val2_23, i32 18)
+
+ST_10: tmp_7 [1/1] 0.00ns
+:96  %tmp_7 = call i2 @_ssdm_op_PartSelect.i2.i21.i32.i32(i21 %p_Val2_23, i32 19, i32 20)
+
+ST_10: p_not_i_i_i [1/1] 1.26ns
+:97  %p_not_i_i_i = icmp ne i2 %tmp_7, 0
+
+ST_10: brmerge_i_i4_i [1/1] 0.92ns
+:98  %brmerge_i_i4_i = or i1 %newsignbit_3, %p_not_i_i_i
+
+ST_10: tmp_3_i1 [1/1] 0.92ns
+:99  %tmp_3_i1 = xor i1 %isneg_3, true
+
+ST_10: overflow_3 [1/1] 0.92ns
+:100  %overflow_3 = and i1 %brmerge_i_i4_i, %tmp_3_i1
+
+ST_10: newsignbit_0_not_i_i_i [1/1] 0.92ns
+:101  %newsignbit_0_not_i_i_i = xor i1 %newsignbit_3, true
+
+ST_10: p_not38_i_i_i [1/1] 1.26ns
+:102  %p_not38_i_i_i = icmp ne i2 %tmp_7, -1
+
+ST_10: brmerge39_i_i_i [1/1] 0.92ns
+:103  %brmerge39_i_i_i = or i1 %p_not38_i_i_i, %newsignbit_0_not_i_i_i
+
+ST_10: underflow_3 [1/1] 0.92ns
+:104  %underflow_3 = and i1 %brmerge39_i_i_i, %isneg_3
+
+
+ <State 11>: 8.00ns
+ST_11: control_lf_i_read [1/1] 0.00ns
+:3  %control_lf_i_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %control_lf_i)
+
+ST_11: control_lf_p_read [1/1] 0.00ns
+:4  %control_lf_p_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %control_lf_p)
+
+ST_11: brmerge_i_i_i_i [1/1] 0.92ns
+:105  %brmerge_i_i_i_i = or i1 %underflow_3, %overflow_3
+
+ST_11: underflow_4_not_i [1/1] 0.92ns
+:106  %underflow_4_not_i = xor i1 %underflow_3, true
+
+ST_11: brmerge1_i [1/1] 0.92ns
+:107  %brmerge1_i = or i1 %overflow_3, %underflow_4_not_i
+
+ST_11: ssdm_int_V_write_assign [1/1] 0.92ns
+:108  %ssdm_int_V_write_assign = select i1 %brmerge_i_i_i_i, i14 8191, i14 %p_Val2_24
+
+ST_11: p_Val2_1_i [1/1] 0.92ns
+:109  %p_Val2_1_i = select i1 %underflow_3, i14 -8192, i14 %p_Val2_24
+
+ST_11: tmp_10 [1/1] 0.92ns
+:110  %tmp_10 = select i1 %brmerge1_i, i14 %ssdm_int_V_write_assign, i14 %p_Val2_1_i
+
+ST_11: tmp_i1 [1/1] 0.00ns
+:111  %tmp_i1 = call i28 @_ssdm_op_BitConcatenate.i28.i14.i14(i14 %tmp_10, i14 0)
+
+ST_11: isNeg [1/1] 0.00ns
+:112  %isNeg = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %control_lf_p_read, i32 7)
+
+ST_11: tmp_4_i [1/1] 1.65ns
+:113  %tmp_4_i = sub i8 0, %control_lf_p_read
+
+ST_11: sh_assign [1/1] 0.92ns
+:114  %sh_assign = select i1 %isNeg, i8 %tmp_4_i, i8 %control_lf_p_read
+
+ST_11: sh_assign_1_cast6_i [1/1] 0.00ns
+:115  %sh_assign_1_cast6_i = zext i8 %sh_assign to i28
+
+ST_11: sh_assign_1_cast_i [1/1] 0.00ns
+:116  %sh_assign_1_cast_i = zext i8 %sh_assign to i32
+
+ST_11: tmp_5_i1 [1/1] 0.00ns
+:117  %tmp_5_i1 = sext i28 %tmp_i1 to i32
+
+ST_11: tmp_6_i2 [1/1] 4.32ns
+:118  %tmp_6_i2 = shl i32 %tmp_5_i1, %sh_assign_1_cast_i
+
+ST_11: tmp_7_i1 [1/1] 4.32ns
+:119  %tmp_7_i1 = ashr i28 %tmp_i1, %sh_assign_1_cast6_i
+
+ST_11: tmp_16 [1/1] 0.00ns
+:120  %tmp_16 = trunc i32 %tmp_6_i2 to i28
+
+ST_11: p_Val2_26 [1/1] 0.92ns
+:121  %p_Val2_26 = select i1 %isNeg, i28 %tmp_16, i28 %tmp_7_i1
+
+ST_11: tmp_19_cast_i [1/1] 0.00ns
+:122  %tmp_19_cast_i = sext i8 %control_lf_i_read to i9
+
+ST_11: sh_assign_1 [1/1] 1.65ns
+:123  %sh_assign_1 = add i9 %tmp_19_cast_i, 9
+
+ST_11: isNeg_1 [1/1] 0.00ns
+:124  %isNeg_1 = call i1 @_ssdm_op_BitSelect.i1.i9.i32(i9 %sh_assign_1, i32 8)
+
+ST_11: tmp_8_i1 [1/1] 1.65ns
+:125  %tmp_8_i1 = sub i9 -9, %tmp_19_cast_i
+
+ST_11: sh_assign_2 [1/1] 0.92ns
+:126  %sh_assign_2 = select i1 %isNeg_1, i9 %tmp_8_i1, i9 %sh_assign_1
+
+ST_11: sh_assign_3_cast5_i [1/1] 0.00ns
+:127  %sh_assign_3_cast5_i = sext i9 %sh_assign_2 to i28
+
+ST_11: sh_assign_3_cast_i [1/1] 0.00ns
+:128  %sh_assign_3_cast_i = sext i9 %sh_assign_2 to i32
+
+ST_11: tmp_10_i [1/1] 4.32ns
+:129  %tmp_10_i = shl i32 %tmp_5_i1, %sh_assign_3_cast_i
+
+ST_11: tmp_11_i [1/1] 4.32ns
+:130  %tmp_11_i = ashr i28 %tmp_i1, %sh_assign_3_cast5_i
+
+ST_11: tmp_18 [1/1] 0.00ns
+:131  %tmp_18 = trunc i32 %tmp_10_i to i28
+
+ST_11: p_Val2_4 [1/1] 0.92ns
+:132  %p_Val2_4 = select i1 %isNeg_1, i28 %tmp_18, i28 %tmp_11_i
+
+
+ <State 12>: 7.78ns
+ST_12: control_reg_init_V_read [1/1] 0.00ns
+:0  %control_reg_init_V_read = call i28 @_ssdm_op_Read.ap_auto.i28(i28 %control_reg_init_V)
+
+ST_12: control_reg_clr_read [1/1] 0.00ns
+:1  %control_reg_clr_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %control_reg_clr)
+
+ST_12: control_lf_out_gain_read [1/1] 0.00ns
+:2  %control_lf_out_gain_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %control_lf_out_gain)
+
+ST_12: p_Val2_25 [1/1] 0.00ns
+:133  %p_Val2_25 = load i28* @i_reg_V, align 4
+
+ST_12: p_Val2_5 [1/1] 2.05ns
+:134  %p_Val2_5 = add i28 %p_Val2_25, %p_Val2_4
+
+ST_12: tmp_12_i [1/1] 0.00ns
+:135  %tmp_12_i = sext i28 %p_Val2_5 to i29
+
+ST_12: tmp_13_i [1/1] 0.00ns
+:136  %tmp_13_i = sext i28 %p_Val2_26 to i29
+
+ST_12: p_Val2_27 [1/1] 2.05ns
+:137  %p_Val2_27 = add i29 %tmp_12_i, %tmp_13_i
+
+ST_12: isneg_4 [1/1] 0.00ns
+:138  %isneg_4 = call i1 @_ssdm_op_BitSelect.i1.i29.i32(i29 %p_Val2_27, i32 28)
+
+ST_12: p_Val2_29 [1/1] 0.00ns
+:139  %p_Val2_29 = trunc i29 %p_Val2_27 to i28
+
+ST_12: newsignbit_4 [1/1] 0.00ns
+:140  %newsignbit_4 = call i1 @_ssdm_op_BitSelect.i1.i29.i32(i29 %p_Val2_27, i32 27)
+
+ST_12: tmp_15_i [1/1] 0.92ns
+:141  %tmp_15_i = xor i1 %newsignbit_4, true
+
+ST_12: underflow_4 [1/1] 0.92ns
+:142  %underflow_4 = and i1 %isneg_4, %tmp_15_i
+
+ST_12: brmerge_i_i_i2 [1/1] 0.92ns
+:143  %brmerge_i_i_i2 = xor i1 %isneg_4, %newsignbit_4
+
+ST_12: isneg_not_i [1/1] 0.92ns
+:144  %isneg_not_i = xor i1 %isneg_4, true
+
+ST_12: brmerge_i1 [1/1] 0.92ns
+:145  %brmerge_i1 = or i1 %newsignbit_4, %isneg_not_i
+
+ST_12: p_Val2_28_mux_i [1/1] 0.92ns
+:146  %p_Val2_28_mux_i = select i1 %brmerge_i_i_i2, i28 134217727, i28 %p_Val2_29
+
+ST_12: p_Val2_i2 [1/1] 0.92ns
+:147  %p_Val2_i2 = select i1 %underflow_4, i28 -134217728, i28 %p_Val2_29
+
+ST_12: tmp_16_i [1/1] 0.92ns
+:148  %tmp_16_i = select i1 %brmerge_i1, i28 %p_Val2_28_mux_i, i28 %p_Val2_i2
+
+ST_12: p_Val2_41 [1/1] 0.92ns
+:149  %p_Val2_41 = select i1 %control_reg_clr_read, i28 %control_reg_init_V_read, i28 %p_Val2_5
+
+ST_12: stg_173 [1/1] 0.00ns
+:150  store i28 %p_Val2_41, i28* @i_reg_V, align 4
+
+ST_12: isNeg_2 [1/1] 0.00ns
+:151  %isNeg_2 = call i1 @_ssdm_op_BitSelect.i1.i8.i32(i8 %control_lf_out_gain_read, i32 7)
+
+ST_12: tmp_17_i [1/1] 1.65ns
+:152  %tmp_17_i = sub i8 0, %control_lf_out_gain_read
+
+ST_12: sh_assign_3 [1/1] 0.92ns
+:153  %sh_assign_3 = select i1 %isNeg_2, i8 %tmp_17_i, i8 %control_lf_out_gain_read
+
+ST_12: stg_177 [1/1] 0.00ns
+:208  call void @_ssdm_op_Write.ap_auto.i28P(i28* %loop_integ_V, i28 %p_Val2_41)
+
+
+ <State 13>: 7.29ns
+ST_13: sh_assign_5_cast3_i [1/1] 0.00ns
+:154  %sh_assign_5_cast3_i = zext i8 %sh_assign_3 to i28
+
+ST_13: sh_assign_5_cast_i [1/1] 0.00ns
+:155  %sh_assign_5_cast_i = zext i8 %sh_assign_3 to i32
+
+ST_13: tmp_18_i [1/1] 0.00ns
+:156  %tmp_18_i = sext i28 %tmp_16_i to i32
+
+ST_13: tmp_19_i [1/1] 4.32ns
+:157  %tmp_19_i = shl i32 %tmp_18_i, %sh_assign_5_cast_i
+
+ST_13: tmp_20_i [1/1] 4.32ns
+:158  %tmp_20_i = ashr i28 %tmp_16_i, %sh_assign_5_cast3_i
+
+ST_13: tmp_25 [1/1] 0.00ns
+:159  %tmp_25 = trunc i32 %tmp_19_i to i28
+
+ST_13: p_Val2_33 [1/1] 0.92ns
+:160  %p_Val2_33 = select i1 %isNeg_2, i28 %tmp_25, i28 %tmp_20_i
+
+ST_13: p_Val2_32 [1/1] 0.00ns
+:161  %p_Val2_32 = load i16* @phase_angle_V, align 2
+
+ST_13: tmp_i2_15 [1/1] 0.00ns
+:162  %tmp_i2_15 = call i27 @_ssdm_op_BitConcatenate.i27.i16.i11(i16 %p_Val2_32, i11 0)
+
+ST_13: tmp_35_cast_i [1/1] 0.00ns
+:163  %tmp_35_cast_i = sext i27 %tmp_i2_15 to i29
+
+ST_13: tmp_21_i [1/1] 0.00ns
+:164  %tmp_21_i = zext i28 %p_Val2_33 to i29
+
+ST_13: p_Val2_34 [1/1] 2.05ns
+:165  %p_Val2_34 = sub i29 %tmp_35_cast_i, %tmp_21_i
+
+ST_13: p_Val2_35 [1/1] 0.00ns
+:166  %p_Val2_35 = call i16 @_ssdm_op_PartSelect.i16.i29.i32.i32(i29 %p_Val2_34, i32 11, i32 26)
+
+ST_13: stg_191 [1/1] 0.00ns
+:167  store i16 %p_Val2_35, i16* @phase_angle_V, align 2
+
+ST_13: msb_V [1/1] 0.00ns
+:168  %msb_V = call i2 @_ssdm_op_PartSelect.i2.i29.i32.i32(i29 %p_Val2_34, i32 25, i32 26)
+
+ST_13: tmp_26 [1/1] 0.00ns
+:169  %tmp_26 = call i1 @_ssdm_op_BitSelect.i1.i29.i32(i29 %p_Val2_34, i32 25)
+
+ST_13: sin_adr_V [1/1] 0.00ns
+:170  %sin_adr_V = call i10 @_ssdm_op_PartSelect.i10.i29.i32.i32(i29 %p_Val2_34, i32 15, i32 24)
+
+
+ <State 14>: 4.23ns
+ST_14: cos_adr_V_3 [1/1] 0.92ns
+:171  %cos_adr_V_3 = xor i10 %sin_adr_V, -1
+
+ST_14: cos_adr_V [1/1] 0.92ns
+:172  %cos_adr_V = select i1 %tmp_26, i10 %cos_adr_V_3, i10 %sin_adr_V
+
+ST_14: sin_adr_V_1 [1/1] 0.92ns
+:173  %sin_adr_V_1 = select i1 %tmp_26, i10 %sin_adr_V, i10 %cos_adr_V_3
+
+ST_14: tmp_23_i [1/1] 0.00ns
+:174  %tmp_23_i = zext i10 %cos_adr_V to i64
+
+ST_14: cos_lut_addr [1/1] 0.00ns
+:175  %cos_lut_addr = getelementptr [1024 x i15]* @cos_lut, i64 0, i64 %tmp_23_i
+
+ST_14: cos_out_V [2/2] 2.39ns
+:176  %cos_out_V = load i15* %cos_lut_addr, align 2
+
+ST_14: tmp_24_i [1/1] 0.00ns
+:178  %tmp_24_i = zext i10 %sin_adr_V_1 to i64
+
+ST_14: cos_lut_addr_1 [1/1] 0.00ns
+:179  %cos_lut_addr_1 = getelementptr [1024 x i15]* @cos_lut, i64 0, i64 %tmp_24_i
+
+ST_14: sin_out_V_3 [2/2] 2.39ns
+:180  %sin_out_V_3 = load i15* %cos_lut_addr_1, align 2
+
+
+ <State 15>: 6.04ns
+ST_15: stg_204 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecResourceLimit(i32 1, [4 x i8]* @p_str, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+
+ST_15: cos_out_V [1/2] 2.39ns
+:176  %cos_out_V = load i15* %cos_lut_addr, align 2
+
+ST_15: p_Val2_32_cast_i [1/1] 0.00ns
+:177  %p_Val2_32_cast_i = zext i15 %cos_out_V to i16
+
+ST_15: sin_out_V_3 [1/2] 2.39ns
+:180  %sin_out_V_3 = load i15* %cos_lut_addr_1, align 2
+
+ST_15: p_Val2_31_cast_i [1/1] 0.00ns
+:181  %p_Val2_31_cast_i = zext i15 %sin_out_V_3 to i16
+
+ST_15: tmp_25_i [1/1] 1.26ns
+:182  %tmp_25_i = icmp eq i2 %msb_V, 1
+
+ST_15: tmp_26_i [1/1] 1.26ns
+:183  %tmp_26_i = icmp eq i2 %msb_V, 0
+
+ST_15: tmp_27_i [1/1] 1.26ns
+:184  %tmp_27_i = icmp eq i2 %msb_V, -1
+
+ST_15: sin_out_V [1/1] 1.81ns
+:185  %sin_out_V = sub i16 0, %p_Val2_31_cast_i
+
+ST_15: sel_tmp_i [1/1] 1.81ns
+:186  %sel_tmp_i = sub i16 0, %p_Val2_32_cast_i
+
+ST_15: sel_tmp3_demorgan_i [1/1] 0.92ns
+:187  %sel_tmp3_demorgan_i = or i1 %tmp_25_i, %tmp_26_i
+
+ST_15: sel_tmp3_i [1/1] 0.92ns
+:188  %sel_tmp3_i = xor i1 %sel_tmp3_demorgan_i, true
+
+ST_15: sel_tmp4_i [1/1] 0.92ns
+:189  %sel_tmp4_i = and i1 %tmp_27_i, %sel_tmp3_i
+
+ST_15: sel_tmp6_i [1/1] 0.92ns
+:190  %sel_tmp6_i = xor i1 %tmp_25_i, true
+
+ST_15: sel_tmp7_i [1/1] 0.92ns
+:191  %sel_tmp7_i = and i1 %tmp_26_i, %sel_tmp6_i
+
+ST_15: or_cond [1/1] 0.92ns
+:192  %or_cond = or i1 %sel_tmp7_i, %sel_tmp4_i
+
+ST_15: tmp_11 [1/1] 0.00ns
+:193  %tmp_11 = call i11 @_ssdm_op_PartSelect.i11.i15.i32.i32(i15 %cos_out_V, i32 4, i32 14)
+
+ST_15: tmp_12 [1/1] 0.00ns
+:194  %tmp_12 = zext i11 %tmp_11 to i12
+
+ST_15: tmp_27 [1/1] 0.00ns
+:195  %tmp_27 = call i12 @_ssdm_op_PartSelect.i12.i16.i32.i32(i16 %sel_tmp_i, i32 4, i32 15)
+
+ST_15: tmp_28 [1/1] 0.92ns
+:196  %tmp_28 = select i1 %sel_tmp4_i, i12 %tmp_12, i12 %tmp_27
+
+ST_15: t_ph_out_i_V [1/1] 0.92ns
+:197  %t_ph_out_i_V = select i1 %sel_tmp7_i, i12 %tmp_12, i12 %tmp_28
+
+ST_15: tmp_29 [1/1] 0.00ns
+:198  %tmp_29 = call i11 @_ssdm_op_PartSelect.i11.i15.i32.i32(i15 %sin_out_V_3, i32 4, i32 14)
+
+ST_15: tmp_30 [1/1] 0.00ns
+:199  %tmp_30 = zext i11 %tmp_29 to i12
+
+ST_15: tmp_31 [1/1] 0.00ns
+:200  %tmp_31 = call i12 @_ssdm_op_PartSelect.i12.i16.i32.i32(i16 %sin_out_V, i32 4, i32 15)
+
+ST_15: tmp_32 [1/1] 0.92ns
+:201  %tmp_32 = select i1 %sel_tmp7_i, i12 %tmp_30, i12 %tmp_31
+
+ST_15: tmp_33 [1/1] 0.92ns
+:202  %tmp_33 = select i1 %tmp_25_i, i12 %tmp_30, i12 %tmp_31
+
+ST_15: t_ph_out_q_V [1/1] 0.92ns
+:203  %t_ph_out_q_V = select i1 %or_cond, i12 %tmp_32, i12 %tmp_33
+
+ST_15: stg_231 [1/1] 0.00ns
+:204  call void @_ssdm_op_Write.ap_auto.i12P(i12* %ph_out_i_V, i12 %t_ph_out_i_V)
+
+ST_15: stg_232 [1/1] 0.00ns
+:205  call void @_ssdm_op_Write.ap_auto.i12P(i12* %ph_out_q_V, i12 %t_ph_out_q_V)
+
+ST_15: stg_233 [1/1] 0.00ns
+:209  ret void
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,25 @@
+#include "hls_design_meta.h"
+const Port_Property HLS_Design_Meta::port_props[]={
+	Port_Property("din_i_V", 16, hls_in, 0, "ap_none", "in_data", 1),
+	Port_Property("din_q_V", 16, hls_in, 1, "ap_none", "in_data", 1),
+	Port_Property("dout_mix_i_V", 16, hls_out, 2, "ap_none", "out_data", 1),
+	Port_Property("dout_mix_q_V", 16, hls_out, 3, "ap_none", "out_data", 1),
+	Port_Property("ph_in_i_V", 12, hls_in, 4, "ap_none", "in_data", 1),
+	Port_Property("ph_in_q_V", 12, hls_in, 5, "ap_none", "in_data", 1),
+	Port_Property("ph_out_i_V", 12, hls_out, 6, "ap_none", "out_data", 1),
+	Port_Property("ph_out_q_V", 12, hls_out, 7, "ap_none", "out_data", 1),
+	Port_Property("loop_integ_V", 28, hls_out, 8, "ap_none", "out_data", 1),
+	Port_Property("control_qam_V", 2, hls_in, 9, "ap_none", "in_data", 1),
+	Port_Property("control_lf_p", 8, hls_in, 10, "ap_none", "in_data", 1),
+	Port_Property("control_lf_i", 8, hls_in, 11, "ap_none", "in_data", 1),
+	Port_Property("control_lf_out_gain", 8, hls_in, 12, "ap_none", "in_data", 1),
+	Port_Property("control_reg_clr", 1, hls_in, 13, "ap_none", "in_data", 1),
+	Port_Property("control_reg_init_V", 28, hls_in, 14, "ap_none", "in_data", 1),
+	Port_Property("ap_clk", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_rst", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_done", 1, hls_out, -1, "", "", 1),
+	Port_Property("ap_start", 1, hls_in, -1, "", "", 1),
+	Port_Property("ap_idle", 1, hls_out, -1, "", "", 1),
+	Port_Property("ap_ready", 1, hls_out, -1, "", "", 1),
+};
+const char* HLS_Design_Meta::dut_name = "qam_dem_top";

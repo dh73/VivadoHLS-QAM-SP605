@@ -1,0 +1,853 @@
+@I [HLS-0] Workspace /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1 opened at Wed Jan 21 09:36:52 CST 2015
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.0005Total elapsed time: 0.768 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000761Total elapsed time: 0.771 sec.
+@I [HLS-100] Command "import_lib /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6 "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001392Total elapsed time: 0.774 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00056Total elapsed time: 0.775 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000686Total elapsed time: 0.775 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000649Total elapsed time: 0.776 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000397Total elapsed time: 0.777 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004914Total elapsed time: 0.777 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000347Total elapsed time: 0.778 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000596Total elapsed time: 0.779 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000299Total elapsed time: 0.779 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.014363Total elapsed time: 0.786 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002427Total elapsed time: 0.794 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00043Total elapsed time: 0.803 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000268Total elapsed time: 0.803 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000242Total elapsed time: 0.804 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000901Total elapsed time: 0.804 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000994Total elapsed time: 0.806 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005099Total elapsed time: 0.807 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/dsp48a.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000342Total elapsed time: 0.807 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0.000137Total elapsed time: 0.808 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 15822} {LUT 63288} {FF 126576} {DSP48A 180} {BRAM 268}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 6.2e-05Total elapsed time: 0.808 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.2e-05Total elapsed time: 0.808 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.042633Total elapsed time: 0.814 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003319Total elapsed time: 0.819 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00149Total elapsed time: 0.821 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006056Total elapsed time: 0.827 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008499Total elapsed time: 0.836 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019482Total elapsed time: 0.859 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02875Total elapsed time: 0.860 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022822Total elapsed time: 0.883 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023579Total elapsed time: 0.907 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000419Total elapsed time: 0.908 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001951Total elapsed time: 0.952 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004568Total elapsed time: 0.953 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001789Total elapsed time: 0.967 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.082042Total elapsed time: 0.990 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.370576Total elapsed time: 1.385 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.541553Total elapsed time: 1.385 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000415Total elapsed time: 1.389 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.547188Total elapsed time: 1.390 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.547714Total elapsed time: 1.390 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000102Total elapsed time: 1.391 sec.
+@I [HLS-100] Command "import_lib /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6 "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6_old_s6.lib "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003787Total elapsed time: 1.395 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006945Total elapsed time: 1.398 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.029821Total elapsed time: 1.421 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004212Total elapsed time: 1.426 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004896Total elapsed time: 1.426 sec.
+@I [HLS-100] Command "set_part xc6slx45tfgg484-3 "
+@I [HLS-100] Command "add_library xilinx/spartan6/spartan6:xc6slx45t:fgg484:-3 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2.7e-05Total elapsed time: 1.435 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0.000122Total elapsed time: 1.435 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2.7e-05Total elapsed time: 1.437 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 6822} {LUT 27288} {FF 54576} {DSP48A 58} {BRAM 116}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 5.6e-05Total elapsed time: 1.437 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed fast "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.2e-05Total elapsed time: 1.438 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.006836Total elapsed time: 1.439 sec.
+@I [HLS-100] Command "add_library xilinx/spartan6/spartan6_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2.8e-05Total elapsed time: 1.442 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 2.3e-05Total elapsed time: 1.442 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.004358Total elapsed time: 1.444 sec.
+@I [HLS-10] Setting target device to 'xc6slx45tfgg484-3'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.017482Total elapsed time: 1.445 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2.3e-05Total elapsed time: 1.445 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 6822} {LUT 27288} {FF 54576} {DSP48A 58} {BRAM 116}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4.5e-05Total elapsed time: 1.446 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed fast "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.1e-05Total elapsed time: 1.446 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.666001Total elapsed time: 1.447 sec.
+@I [HLS-100] Command "export_design -format sysgen_ise "
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000608Total elapsed time: 1.464 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001637Total elapsed time: 1.475 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003241Total elapsed time: 1.476 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000984Total elapsed time: 1.478 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00254Total elapsed time: 1.480 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000332Total elapsed time: 1.481 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000539Total elapsed time: 1.482 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003333Total elapsed time: 1.486 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001903Total elapsed time: 1.489 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006698Total elapsed time: 1.500 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008707Total elapsed time: 1.509 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019159Total elapsed time: 1.531 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.028658Total elapsed time: 1.531 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022453Total elapsed time: 1.554 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023531Total elapsed time: 1.578 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000451Total elapsed time: 1.579 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.072965Total elapsed time: 1.670 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.347739Total elapsed time: 2.41 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.51046Total elapsed time: 2.41 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000404Total elapsed time: 2.45 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.516129Total elapsed time: 2.46 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.516505Total elapsed time: 2.46 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004466Total elapsed time: 2.51 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005064Total elapsed time: 2.51 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000724Total elapsed time: 2.53 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000749Total elapsed time: 2.58 sec.
+@I [IMPL-8] Exporting RTL as an IP for System Generator for DSP (ISE).
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000674Total elapsed time: 2.62 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000745Total elapsed time: 2.76 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00152Total elapsed time: 2.79 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003278Total elapsed time: 2.80 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001084Total elapsed time: 2.82 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002483Total elapsed time: 2.85 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000379Total elapsed time: 2.85 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000485Total elapsed time: 2.86 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002836Total elapsed time: 2.90 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001858Total elapsed time: 2.92 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006403Total elapsed time: 2.99 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00833Total elapsed time: 2.108 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018296Total elapsed time: 2.127 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027403Total elapsed time: 2.127 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022697Total elapsed time: 2.150 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023389Total elapsed time: 2.174 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000429Total elapsed time: 2.175 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.072348Total elapsed time: 2.248 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.349789Total elapsed time: 2.603 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.509898Total elapsed time: 2.603 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000408Total elapsed time: 2.607 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.514968Total elapsed time: 2.608 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.515406Total elapsed time: 2.608 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004262Total elapsed time: 2.613 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004801Total elapsed time: 2.613 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000655Total elapsed time: 2.615 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top_mounstrito.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0018Total elapsed time: 2.618 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000836Total elapsed time: 2.620 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000653Total elapsed time: 2.679 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000665Total elapsed time: 2.704 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000539Total elapsed time: 2.706 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001617Total elapsed time: 2.710 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003545Total elapsed time: 2.711 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001076Total elapsed time: 2.713 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002752Total elapsed time: 2.715 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000373Total elapsed time: 2.716 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000501Total elapsed time: 2.717 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002994Total elapsed time: 2.721 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001795Total elapsed time: 2.723 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006673Total elapsed time: 2.735 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008561Total elapsed time: 2.745 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018342Total elapsed time: 2.764 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02767Total elapsed time: 2.764 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02323Total elapsed time: 2.787 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023705Total elapsed time: 2.812 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000448Total elapsed time: 2.813 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.074127Total elapsed time: 2.892 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.346203Total elapsed time: 3.260 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.509422Total elapsed time: 3.261 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000476Total elapsed time: 3.265 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.514879Total elapsed time: 3.265 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.515253Total elapsed time: 3.265 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004441Total elapsed time: 3.271 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005061Total elapsed time: 3.271 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000594Total elapsed time: 3.273 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002387Total elapsed time: 3.281 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000889Total elapsed time: 3.305 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000608Total elapsed time: 3.306 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/hls_design_meta.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000384Total elapsed time: 3.315 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00055Total elapsed time: 3.316 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000507Total elapsed time: 3.317 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000528Total elapsed time: 3.318 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003052Total elapsed time: 3.407 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/sim/autowrap/testbench/tb_qam_dem.cpp_pre.cpp /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/sim/autowrap/testbench/tb_qam_dem.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/tb_qam_dem.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/tb_qam_dem.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-0] Marker-Pragma convertor: /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/sim/autowrap/testbench/qam_dem.cpp_pre.cpp /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/sim/autowrap/testbench/qam_dem.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/qam_dem.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/qam_dem.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002462Total elapsed time: 139.214 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002509Total elapsed time: 139.218 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00063Total elapsed time: 139.219 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000662Total elapsed time: 139.222 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000669Total elapsed time: 139.281 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000663Total elapsed time: 139.290 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000676Total elapsed time: 139.300 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000643Total elapsed time: 139.303 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00063Total elapsed time: 139.305 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00062Total elapsed time: 139.308 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000641Total elapsed time: 139.310 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000619Total elapsed time: 139.313 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000625Total elapsed time: 139.315 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000671Total elapsed time: 139.318 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000625Total elapsed time: 139.320 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000625Total elapsed time: 139.323 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000664Total elapsed time: 139.326 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000644Total elapsed time: 139.329 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000661Total elapsed time: 139.332 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000628Total elapsed time: 139.334 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000626Total elapsed time: 139.337 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000669Total elapsed time: 139.357 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000653Total elapsed time: 139.360 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000632Total elapsed time: 139.363 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000666Total elapsed time: 139.365 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000618Total elapsed time: 139.368 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004605Total elapsed time: 300.68 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002881Total elapsed time: 300.72 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001289Total elapsed time: 300.89 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001035Total elapsed time: 300.91 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00228Total elapsed time: 300.196 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00241Total elapsed time: 300.199 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000598Total elapsed time: 300.200 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000525Total elapsed time: 300.201 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002343Total elapsed time: 300.289 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002375Total elapsed time: 300.293 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0006Total elapsed time: 300.293 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001146Total elapsed time: 300.323 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002385Total elapsed time: 300.415 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002424Total elapsed time: 300.418 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000678Total elapsed time: 300.419 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00053Total elapsed time: 300.420 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002371Total elapsed time: 300.510 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00238Total elapsed time: 300.513 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000634Total elapsed time: 300.514 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000589Total elapsed time: 300.515 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002289Total elapsed time: 300.604 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002384Total elapsed time: 300.607 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000662Total elapsed time: 300.608 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000551Total elapsed time: 300.609 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002382Total elapsed time: 300.698 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002462Total elapsed time: 300.702 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000624Total elapsed time: 300.702 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000529Total elapsed time: 300.703 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002387Total elapsed time: 300.793 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002395Total elapsed time: 300.796 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000647Total elapsed time: 300.797 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000588Total elapsed time: 300.798 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002296Total elapsed time: 300.888 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002364Total elapsed time: 300.891 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000682Total elapsed time: 300.892 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000526Total elapsed time: 300.893 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002319Total elapsed time: 300.982 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002418Total elapsed time: 300.986 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000688Total elapsed time: 300.986 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000531Total elapsed time: 300.987 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002373Total elapsed time: 301.78 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002425Total elapsed time: 301.81 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000631Total elapsed time: 301.82 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000539Total elapsed time: 301.83 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002408Total elapsed time: 301.172 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002408Total elapsed time: 301.175 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000604Total elapsed time: 301.176 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000519Total elapsed time: 301.177 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002391Total elapsed time: 301.267 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002411Total elapsed time: 301.270 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000626Total elapsed time: 301.271 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000576Total elapsed time: 301.272 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002373Total elapsed time: 301.361 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00237Total elapsed time: 301.365 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000633Total elapsed time: 301.365 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000543Total elapsed time: 301.366 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002482Total elapsed time: 301.456 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002471Total elapsed time: 301.460 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000645Total elapsed time: 301.460 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000537Total elapsed time: 301.461 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002395Total elapsed time: 301.554 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002398Total elapsed time: 301.557 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000669Total elapsed time: 301.558 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000621Total elapsed time: 301.559 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002381Total elapsed time: 301.649 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002386Total elapsed time: 301.652 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000634Total elapsed time: 301.653 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000523Total elapsed time: 301.654 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002292Total elapsed time: 301.745 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002302Total elapsed time: 301.748 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000624Total elapsed time: 301.749 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000511Total elapsed time: 301.749 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002353Total elapsed time: 301.840 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002468Total elapsed time: 301.843 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000638Total elapsed time: 301.844 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000685Total elapsed time: 301.847 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002297Total elapsed time: 301.938 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002521Total elapsed time: 301.941 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000645Total elapsed time: 301.942 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000538Total elapsed time: 301.943 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002373Total elapsed time: 302.34 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002376Total elapsed time: 302.37 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000614Total elapsed time: 302.38 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000628Total elapsed time: 302.39 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001284Total elapsed time: 302.265 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000546Total elapsed time: 302.496 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000841Total elapsed time: 302.512 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000415Total elapsed time: 302.513 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001162Total elapsed time: 302.652 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002786Total elapsed time: 302.736 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00593Total elapsed time: 302.738 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001843Total elapsed time: 302.741 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003859Total elapsed time: 302.746 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000642Total elapsed time: 302.748 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000628Total elapsed time: 302.748 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006212Total elapsed time: 302.815 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002631Total elapsed time: 302.823 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008687Total elapsed time: 302.848 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009289Total elapsed time: 302.859 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02278Total elapsed time: 302.894 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03309Total elapsed time: 302.895 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.029401Total elapsed time: 302.935 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.026852Total elapsed time: 302.977 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000581Total elapsed time: 302.980 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.079543Total elapsed time: 303.71 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.353935Total elapsed time: 303.428 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.544823Total elapsed time: 303.428 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000637Total elapsed time: 303.433 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.551764Total elapsed time: 303.433 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.552854Total elapsed time: 303.433 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004695Total elapsed time: 303.440 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00548Total elapsed time: 303.440 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000737Total elapsed time: 303.441 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000733Total elapsed time: 303.467 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000714Total elapsed time: 303.474 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001876Total elapsed time: 303.478 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003833Total elapsed time: 303.480 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001119Total elapsed time: 303.481 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002677Total elapsed time: 303.484 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000442Total elapsed time: 303.485 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000506Total elapsed time: 303.485 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003007Total elapsed time: 303.490 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001893Total elapsed time: 303.492 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00675Total elapsed time: 303.501 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008585Total elapsed time: 303.510 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018798Total elapsed time: 303.530 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.028303Total elapsed time: 303.530 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023503Total elapsed time: 303.554 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.024105Total elapsed time: 303.579 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000467Total elapsed time: 303.580 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.07738Total elapsed time: 303.660 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.3617Total elapsed time: 304.26 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.529951Total elapsed time: 304.26 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000418Total elapsed time: 304.30 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.535306Total elapsed time: 304.31 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.535695Total elapsed time: 304.31 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004318Total elapsed time: 304.36 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004868Total elapsed time: 304.36 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000585Total elapsed time: 304.37 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top_mounstrito.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002091Total elapsed time: 304.66 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000969Total elapsed time: 304.68 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000564Total elapsed time: 304.152 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000303Total elapsed time: 304.154 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00155Total elapsed time: 304.159 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003417Total elapsed time: 304.160 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001117Total elapsed time: 304.162 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002617Total elapsed time: 304.165 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000508Total elapsed time: 304.166 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000651Total elapsed time: 304.167 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003066Total elapsed time: 304.172 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001858Total elapsed time: 304.174 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006608Total elapsed time: 304.181 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008517Total elapsed time: 304.190 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01844Total elapsed time: 304.209 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027723Total elapsed time: 304.209 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02356Total elapsed time: 304.233 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023849Total elapsed time: 304.258 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000441Total elapsed time: 304.259 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.076187Total elapsed time: 304.336 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.341407Total elapsed time: 304.680 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.50745Total elapsed time: 304.681 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000478Total elapsed time: 304.685 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.512999Total elapsed time: 304.685 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.513398Total elapsed time: 304.686 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004279Total elapsed time: 304.690 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004822Total elapsed time: 304.691 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000648Total elapsed time: 304.770 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001613Total elapsed time: 304.781 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003642Total elapsed time: 304.782 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001108Total elapsed time: 304.784 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002766Total elapsed time: 304.787 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000382Total elapsed time: 304.787 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000571Total elapsed time: 304.788 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003171Total elapsed time: 304.793 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001911Total elapsed time: 304.795 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006791Total elapsed time: 304.802 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008763Total elapsed time: 304.811 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019264Total elapsed time: 304.831 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.028847Total elapsed time: 304.831 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023981Total elapsed time: 304.856 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023882Total elapsed time: 304.880 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000443Total elapsed time: 304.881 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.076689Total elapsed time: 304.958 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.339401Total elapsed time: 305.299 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.507819Total elapsed time: 305.299 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000406Total elapsed time: 305.303 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.513056Total elapsed time: 305.304 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.513464Total elapsed time: 305.304 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004346Total elapsed time: 305.309 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004863Total elapsed time: 305.309 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000682Total elapsed time: 305.310 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000601Total elapsed time: 305.314 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000606Total elapsed time: 305.320 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001483Total elapsed time: 305.323 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003348Total elapsed time: 305.324 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001103Total elapsed time: 305.326 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002619Total elapsed time: 305.329 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00038Total elapsed time: 305.329 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000507Total elapsed time: 305.330 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002896Total elapsed time: 305.334 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001771Total elapsed time: 305.336 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00647Total elapsed time: 305.343 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008505Total elapsed time: 305.352 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018021Total elapsed time: 305.371 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027292Total elapsed time: 305.371 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.022877Total elapsed time: 305.394 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023691Total elapsed time: 305.418 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00043Total elapsed time: 305.419 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.074785Total elapsed time: 305.494 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.353104Total elapsed time: 305.849 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.516056Total elapsed time: 305.849 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000407Total elapsed time: 305.853 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.521316Total elapsed time: 305.853 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.521696Total elapsed time: 305.854 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004262Total elapsed time: 305.858 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004782Total elapsed time: 305.859 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000588Total elapsed time: 305.860 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top_mounstrito.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001599Total elapsed time: 305.862 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000791Total elapsed time: 305.863 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000612Total elapsed time: 305.925 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/qam_dem_top.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0003Total elapsed time: 305.927 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001538Total elapsed time: 305.932 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00339Total elapsed time: 305.933 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001059Total elapsed time: 305.934 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002608Total elapsed time: 305.937 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000384Total elapsed time: 305.938 sec.
+@I [HLS-100] Command "source /home/diego/qam_demudulator/v1/src/src2/qam_dem/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000541Total elapsed time: 305.939 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002941Total elapsed time: 305.943 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001865Total elapsed time: 305.945 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006523Total elapsed time: 305.952 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008475Total elapsed time: 305.961 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018083Total elapsed time: 305.980 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027409Total elapsed time: 305.980 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023027Total elapsed time: 306.3 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0237Total elapsed time: 306.27 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000551Total elapsed time: 306.28 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.075226Total elapsed time: 306.104 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.349136Total elapsed time: 306.454 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.513119Total elapsed time: 306.455 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000395Total elapsed time: 306.459 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.518309Total elapsed time: 306.459 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.5187Total elapsed time: 306.459 sec.
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/spartan6/spartan6_fpv6.gen "
+@I [HLS-100] Command "source /home/diego/EDA/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004203Total elapsed time: 306.464 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004734Total elapsed time: 306.464 sec.
+@I [HLS-100] Command 'export_design' returned 0; elapsed 14.7742Total elapsed time: 306.496 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.009152Total elapsed time: 306.921 sec.

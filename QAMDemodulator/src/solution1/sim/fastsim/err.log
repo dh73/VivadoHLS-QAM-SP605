@@ -1,0 +1,23 @@
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::mix(cdata_t, cdata_t*, cphase_t)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x60): multiple definition of `QAMDEM::mix(cdata_t, cdata_t*, cphase_t)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x60): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::loop_filter(ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x170): multiple definition of `QAMDEM::loop_filter(ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x170): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::slicer(ap_ufixed<2, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, cdata_t, hd_t*, cdata_t*, error_t*)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x420): multiple definition of `QAMDEM::slicer(ap_ufixed<2, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, cdata_t, hd_t*, cdata_t*, error_t*)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x420): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::compute_phase(hd_t, cdata_t, ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>*)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x6e0): multiple definition of `QAMDEM::compute_phase(hd_t, cdata_t, ap_fixed<14, 2, (ap_q_mode)5, (ap_o_mode)0, 0>*)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x6e0): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::vco(ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 1, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x850): multiple definition of `QAMDEM::vco(ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 1, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x850): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::phase_recovery(hd_t, cdata_t, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*, ctl_crec_t)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x5d20): multiple definition of `QAMDEM::phase_recovery(hd_t, cdata_t, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, cphase_t*, ctl_crec_t)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x5d20): first defined here
+obj/qam_dem.cpp_pre.cpp.tb.o: In function `QAMDEM::mounstrito(cdata_t, cdata_t*, cphase_t, cphase_t*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)':
+qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x5ec0): multiple definition of `QAMDEM::mounstrito(cdata_t, cdata_t*, cphase_t, cphase_t*, ap_fixed<28, 2, (ap_q_mode)5, (ap_o_mode)3, 0>*, ctl_crec_t)'
+obj/tb_qam_dem.cpp_pre.cpp.tb.o:tb_qam_dem.cpp_pre.cpp.tb.cpp:(.text+0x5ec0): first defined here
+collect2: ld returned 1 exit status
+make: *** [lib] Error 1

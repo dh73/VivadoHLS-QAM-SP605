@@ -1,0 +1,59 @@
+QAM Demodulator Version 3.2
+
+Dependencies:
+1) Matlab Version >= 8.
+2) Vivado HLS 201x.x ( Only if you want to synthesize the code ).
+3) Xilinx ISE 14.x ( For the Sysgen toolbox ).
+
+How to RUN:
+1) Start System Generator for DSP (Xilinx-Matlab toolbox).
+2) Run the qamGUI.m script.
+3) A new window appear, press run button.
+4) View the results.
+
+VIDEO Links ( to show the functionality )
+1) https://www.youtube.com/watch?v=c4vW2-aQGbU
+2) https://www.youtube.com/watch?v=pW5pNYgZkp8
+3) https://www.youtube.com/watch?v=9Q8BvkilCQ8
+
+Changes since the first presentation:
+1) Added sigan noise - good results ( 6% error ).
+2) The model now support Hardware in the loop emulation with point to point ethernet.
+3) GUI for easy acces to the model.
+4) Best source file structure.
+5) Tables of input/output values.
+
+File structure:
+|-- model   -> *************************** Contains the Matlab GUI/Smulink main block.                                                                                                                                                                              
+|   |-- cc.mat                                                                                                                                                                                 
+|   |-- qamGUI.fig                                                                                                                                                                             
+|   |-- qamGUI.m                                                                                                                                                                               
+|   |-- qam_init.m                                                                                                                                                                             
+|   |-- qam_model.slx                                                                                                                                                                          
+|   |-- start.v                                                                                                                                                                                
+|   `-- start_config.m                                                                                                                                                                         
+`-- src     -> **************************** Sources                                                                                                                                                                                      
+    |-- qam_dem.cpp                                                                                                                                                                            
+    |-- qam_dem.h                                                                                                                                                                              
+    |-- qam_dem_defs.cpp 
+    |-- synt_types.h
+    |-- table.h
+    `-- vivado_hls.app
+    |-- solution1 -> ********************* The generated Simulink block and VHDL/Verilog/SystemC sources                                                                                                                                                                         
+    |   |-- csim                                                                                                                                                                               
+    |   |   |-- build                                                                                                                                                                          
+    |   |   |   |-- Makefile.rules                                                                                                                                                             
+    |   |   |   |-- csim.mk                                                                                                                                                                    
+    |   |   |   |-- obj                                                                                                                                                                        
+    |   |   |   |   |-- qam_dem.d                                                                                                                                                              
+    |   |   |   |   |-- qam_dem.o                                                                                                                                                              
+    |   |   |   |   |-- tb_qam_dem.d                                                                                                                                                           
+    |   |   |   |   `-- tb_qam_dem.o                                                                                                                                                           
+    |   |   |   |-- run_sim.tcl                                                                                                                                                                
+    |   |   |   |-- sim.sh                                                                                                                                                                     
+    |   |   |   `-- table.txt                                                                                                                                                                  
+    |   |   `-- report                                                                                                                                                                         
+    |   |       `-- qam_dem_top_csim.log  
+    
+    
+ Thank you!!!
